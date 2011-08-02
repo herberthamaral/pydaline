@@ -1,0 +1,9 @@
+Pydaline
+========
+
+Esta é uma simples implementação de uma rede neural utilizando o algoritmo
+Adaline, feito durante a disciplina de Introdução à inteligência artificial na
+Unimontes, ministrada pelo professor Clarimundo.
+
+O código está relativamente simples de se entender, mas eu colocarei mais
+explicações aqui em breve.
