@@ -1,4 +1,4 @@
-# -*- coding: cp1252 -*-
+# -*- coding: utf-8 -*-
 import random
 random.randrange(start=-1,stop=1)
 class Pydaline:
@@ -18,13 +18,13 @@ class Pydaline:
 
     def setDebug(self,debug=True):
         """
-        Se ativado, ele mostrará as mensagens de treinamento
+        Se ativado, ele mostrarÃ¡ as mensagens de treinamento
         """
         self.debug = debug
         
     def setEntradas(self,entradas):
         """
-        Aplica as entradas fornecidas e reajusta o número de pesos
+        Aplica as entradas fornecidas e reajusta o nÃºmero de pesos
         """
         if entradas.__len__()>=2:
             #cria novos pesos
@@ -35,20 +35,20 @@ class Pydaline:
 
     def setSaidasDesejadas(self,saidas):
         """
-        Ajusta as as saídas desejadas necessárias para treinar o neuronio
+        Ajusta as as saÃ­das desejadas necessÃ¡rias para treinar o neuronio
         """
         if saidas.__len__()>=2:
             self.saidas_desejadas = saidas
 
     def criterio_parada(self):
         """
-        Critério de parada. Sobrescreva para mudar.
+        CritÃ©rio de parada. Sobrescreva para mudar.
         """
-        return (self.epocas==100) #treinamento máximo em 100 épocas
+        return (self.epocas==100) #treinamento mÃ¡ximo em 100 Ã©pocas
     
     def somatorio(self,numEntrada):
         """
-        Faz o somatório do produto de cada entrada com seu respectivo peso
+        Faz o somatÃ³rio do produto de cada entrada com seu respectivo peso
         """
         somatorio = 0
         for i in range(0,self.entradas[numEntrada].__len__()):
@@ -57,7 +57,7 @@ class Pydaline:
     
     def ativacao(self,numEntrada):
         """
-        Função de ativação. Sobrescreva se quiser uma diferente.
+        FunÃ§Ã£o de ativaÃ§Ã£o. Sobrescreva se quiser uma diferente.
         """
         somatorio = self.somatorio(numEntrada)
         if somatorio>=self.theta:
@@ -68,10 +68,10 @@ class Pydaline:
     
     def aprender(self):
         """
-        Realiza o treinamento por épocas.
+        Realiza o treinamento por Ã©pocas.
         """
         if self.saidas_desejadas.__len__()!=self.entradas.__len__():
-            raise Exception("Whoops! O número de entradas é diferente do número de saídas desejadas.")
+            raise Exception("Whoops! O nÃºmero de entradas Ã© diferente do nÃºmero de saÃ­das desejadas.")
         while self.erroGlobal != 0 and not self.criterio_parada():
             self.epocas += 1
             if self.debug: print "Iniciando epoca: ",self.epocas,". Erro Global:",self.erroGlobal
@@ -81,7 +81,7 @@ class Pydaline:
             
     def treina(self):
         """
-        Percorre as entradas, calcula as saídas e passa o erro para a função de ajuste
+        Percorre as entradas, calcula as saÃ­das e passa o erro para a funÃ§Ã£o de ajuste
         """
         for i in range(0,self.entradas.__len__()): #treina o nuronio para cada entrada
             ativacao = self.ativacao(i)
@@ -97,7 +97,7 @@ class Pydaline:
 
     def ajusta_pesos(self,erro,numEntrada):
         """
-        Principal função: realiza o ajuste de pesos (aprendizado) quando houver erro.
+        Principal funÃ§Ã£o: realiza o ajuste de pesos (aprendizado) quando houver erro.
         """
         if erro !=0:
             plen = self.pesos.__len__()
@@ -364,7 +364,7 @@ neuron_2.aprender()
 neuron_3.aprender()
 neuron_4.aprender()
 
-print "Épocas do neurônio 1:",neuron_1.epocas
-print "Épocas do neurônio 2:",neuron_2.epocas
-print "Épocas do neurônio 3:",neuron_3.epocas
-print "Épocas do neurônio 4:",neuron_4.epocas
+print "Ã‰pocas do neurÃ´nio 1:",neuron_1.epocas
+print "Ã‰pocas do neurÃ´nio 2:",neuron_2.epocas
+print "Ã‰pocas do neurÃ´nio 3:",neuron_3.epocas
+print "Ã‰pocas do neurÃ´nio 4:",neuron_4.epocas
