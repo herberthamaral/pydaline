@@ -5,5 +5,45 @@ Esta é uma simples implementação de uma rede neural utilizando o algoritmo
 Adaline, feito durante a disciplina de Introdução à inteligência artificial na
 Unimontes, ministrada pelo professor Clarimundo.
 
-O código está relativamente simples de se entender, mas eu colocarei mais
-explicações aqui em breve.
+Uso básico
+----------
+
+Um exemplo clássico no ensino de redes neurais é o treinamento com portas
+lógicas. Suponhamos que nosso neurônio tenha que aprender a porta lógica OR. As
+entradas são as seguintes:
+
+    A  or B 
+    --------
+    0  | 0  
+    0  | 1  
+    1  | 0  
+    1  | 1  
+
+
+E a saída desejada é a seguinte:
+
+    | Resultado |
+    |-----------|
+    |    0      |
+    |    1      |
+    |    1      |
+    |    1      |
+
+
+É razoavelmente fácil fazer isso com o pydaline:
+
+    >>> import pydaline
+    >>> neuronio = pydaline.Pydaline()
+    >>> neuronio.setEntradas([[0,0],[0,1],[1,0],[1,1]])
+    >>> neuronio.setSaidasDesejadas([0,1,1,1])
+    >>> neuronio.setDebug(False) #opcional: remova se quiser ver as mensagens de
+    >>> neuronio.aprender()
+    >>> neuronio.obter_resposta_para_entrada([0,1])
+    1
+    >>> neuronio.obter_resposta_para_entrada([0,0])
+    0
+    >>> neuronio.obter_resposta_para_entrada([1,0])
+    1
+    >>> neuronio.obter_resposta_para_entrada([1,1])
+    1
+
