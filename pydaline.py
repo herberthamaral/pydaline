@@ -261,25 +261,25 @@ digito_k1 = [0,0,0,0,0,
              1,0,1,0,0,
              1,0,0,1,0]
 
-##################### Botando a loira pra aprender ;) ###############################
-# a = [-1,-1,-1,-1] => neuron_1 = -1, neuron_2 =-1, neuron_3 = -1, etc
-# b = [-1,-1,-1, 1]
-# c = [-1,-1, 1,-1]
-# d = [-1,-1, 1, 1]
-# e = [-1, 1,-1,-1]
-# f = [-1, 1,-1, 1]
-# g = [-1, 1, 1,-1]
-# h = [-1, 1, 1, 1]
-# i = [ 1,-1,-1,-1]
-# j = [ 1,-1,-1, 1]
-# k = [ 1,-1, 1,-1]
-# l = [ 1,-1, 1, 1]
-# m = [ 1, 1,-1,-1]
-# n = [ 1, 1,-1, 1]
-# o = [ 1, 1, 1,-1]
-# p = [ 1, 1, 1, 1]
+def main():
+    # a = [-1,-1,-1,-1] => neuron_1 = -1, neuron_2 =-1, neuron_3 = -1, etc
+    # b = [-1,-1,-1, 1]
+    # c = [-1,-1, 1,-1]
+    # d = [-1,-1, 1, 1]
+    # e = [-1, 1,-1,-1]
+    # f = [-1, 1,-1, 1]
+    # g = [-1, 1, 1,-1]
+    # h = [-1, 1, 1, 1]
+    # i = [ 1,-1,-1,-1]
+    # j = [ 1,-1,-1, 1]
+    # k = [ 1,-1, 1,-1]
+    # l = [ 1,-1, 1, 1]
+    # m = [ 1, 1,-1,-1]
+    # n = [ 1, 1,-1, 1]
+    # o = [ 1, 1, 1,-1]
+    # p = [ 1, 1, 1, 1]
 
-entradas = [digito_a0,digito_a1,
+    entradas = [digito_a0,digito_a1,
             digito_b0,digito_b1,
             digito_c0,digito_c1,
             digito_d0,digito_d1,
@@ -291,7 +291,7 @@ entradas = [digito_a0,digito_a1,
             digito_j0,digito_j1,
             digito_k0,digito_k1]
 
-saidas_1 = [-1,-1, #a
+    saidas_1 = [-1,-1, #a
             -1,-1, #b
             -1,-1, #c
             -1,-1, #d
@@ -303,7 +303,7 @@ saidas_1 = [-1,-1, #a
              1, 1,
              1, 1]
 
-saidas_2 = [-1,-1,
+    saidas_2 = [-1,-1,
             -1,-1,
             -1,-1,
             -1,-1,
@@ -315,7 +315,7 @@ saidas_2 = [-1,-1,
             -1,-1,
             -1,-1]
 
-saidas_3 = [-1,-1,
+    saidas_3 = [-1,-1,
             -1,-1,
              1, 1,
              1, 1,
@@ -327,7 +327,7 @@ saidas_3 = [-1,-1,
             -1,-1,
              1, 1]
 
-saidas_4 = [-1,-1,
+    saidas_4 = [-1,-1,
              1, 1,
             -1,-1,
              1, 1,
@@ -339,32 +339,36 @@ saidas_4 = [-1,-1,
              1, 1,
             -1,-1]
 
-neuron_1 = Pydaline()
-neuron_2 = Pydaline()
-neuron_3 = Pydaline()
-neuron_4 = Pydaline()
 
-neuron_1.setEntradas(entradas)
-neuron_2.setEntradas(entradas)
-neuron_3.setEntradas(entradas)
-neuron_4.setEntradas(entradas)
+    neuron_1 = Pydaline()
+    neuron_2 = Pydaline()
+    neuron_3 = Pydaline()
+    neuron_4 = Pydaline()
 
-neuron_1.setSaidasDesejadas(saidas_1)
-neuron_2.setSaidasDesejadas(saidas_2)
-neuron_3.setSaidasDesejadas(saidas_3)
-neuron_4.setSaidasDesejadas(saidas_4)
+    neuron_1.setEntradas(entradas)
+    neuron_2.setEntradas(entradas)
+    neuron_3.setEntradas(entradas)
+    neuron_4.setEntradas(entradas)
 
-#neuron_1.setDebug(False)
-#neuron_2.setDebug(False)
-#neuron_3.setDebug(False)
-#neuron_4.setDebug(False)
+    neuron_1.setSaidasDesejadas(saidas_1)
+    neuron_2.setSaidasDesejadas(saidas_2)
+    neuron_3.setSaidasDesejadas(saidas_3)
+    neuron_4.setSaidasDesejadas(saidas_4)
 
-neuron_1.aprender()
-neuron_2.aprender()
-neuron_3.aprender()
-neuron_4.aprender()
+    #neuron_1.setDebug(False)
+    #neuron_2.setDebug(False)
+    #neuron_3.setDebug(False)
+    #neuron_4.setDebug(False)
 
-print "Épocas do neurônio 1:",neuron_1.epocas
-print "Épocas do neurônio 2:",neuron_2.epocas
-print "Épocas do neurônio 3:",neuron_3.epocas
-print "Épocas do neurônio 4:",neuron_4.epocas
+    neuron_1.aprender()
+    neuron_2.aprender()
+    neuron_3.aprender()
+    neuron_4.aprender()
+
+    print "Épocas do neurônio 1:",neuron_1.epocas
+    print "Épocas do neurônio 2:",neuron_2.epocas
+    print "Épocas do neurônio 3:",neuron_3.epocas
+    print "Épocas do neurônio 4:",neuron_4.epocas
+
+if __name__ == "__main__":
+    main()
