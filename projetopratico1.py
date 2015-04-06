@@ -55,7 +55,12 @@ def exercicio_1():
     neuronio.aprender()
 
 if __name__=='__main__':
-    if 'plot' in sys.argv:
+    if len(sys.argv) == 1:
+        print u"Opções:"
+        print "python projetopratico1.py plot"
+        print "python projetopratico1.py ex1"
+        print "python projetopratico1.py ex2"
+    elif 'plot' in sys.argv:
         plot()
     elif 'ex1' in sys.argv:
         exercicio_1()
